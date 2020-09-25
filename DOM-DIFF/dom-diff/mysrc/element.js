@@ -25,7 +25,7 @@ function setAttr(node,key,value) {
   }
 }
 //返回虚拟节点 返回object
-function creatElement(type,props,children) {
+function createElement(type,props,children) {
   //返回一个虚拟元素
     return  new Element(type,props,children);
 }
@@ -40,7 +40,7 @@ function render(eleObj) {
   //遍历儿子节点 若是怒你dom 继续渲染 不是就代表的是文本节点
   eleObj.children.forEach(child=>{
     child= (child instanceof Element)?render(child):document.createTextNode(child);
-    el.appendChildren(child);
+    el.appendChild(child);
   })
   return el;
 }
@@ -50,4 +50,4 @@ function renderDom(el,target) {
   target.appendChild(el);
 }
 
-export {creatElement,render,Element}
+export {createElement,renderDom,render,Element}
