@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+<div>Hello a~</div>
+<!--
+高级api 不兼容 socket.io(一般使用它)
+-->
+
+<script>
+    let socket =new WebSocket('ws://localhost:4000');
+    socket.onopen=function(){
+      socket.send('hihihihi~');
+    }
+    socket.onmessage=function(e){
+      console.log(e.data);
+    }
+</script>
+
+
+</body>
+</html>

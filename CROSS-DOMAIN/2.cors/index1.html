@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+<div>Hello</div>
+<script>
+    let xhr=new XMLHttpRequest;
+    document.cookie='name1=zxx';
+    xhr.withCredentials =true;
+    // xhr.open('GET','http://localhost:4000/getData',true);
+    xhr.open('PUT','http://localhost:4000/getData',true);
+    xhr.setRequestHeader('name','zxx');
+    xhr.onreadystatechange = function () {
+        if(xhr.readyState===4){
+          if(xhr.status>=200 && xhr.status <300 || xhr.status ===304){
+            console.log(xhr.response);
+            console.log(xhr.getResponseHeader('name1'));
+          }
+        }
+    }
+    xhr.send()
+</script>
+
+
+</body>
+</html>
