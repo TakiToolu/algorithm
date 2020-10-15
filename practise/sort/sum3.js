@@ -1,4 +1,4 @@
-//未完成，有bug，第一个数等于2时，进不去第二个数的循环
+//找出数组中不重复的三个数，他们的和等于特定值
 var threeSum = function(nums) {
   nums.sort((a,b)=>{return a-b});
   let result=[];

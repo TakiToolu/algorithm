@@ -38,12 +38,46 @@ function  insert(data){
   for(var i=0;i<len;i++){
     var key=data[i];
     var j=i-1;
+    // var temp=0;
     while(j>=0&&data[j]>key){
-      data[j+1]=data[i];
+      // temp=data[j];
+      // data[j]=data[j+1];
+      // data[j+1]=temp;
+      data[j+1]=data[j];
       j--;
     }
     data[j+1]=key;
   }
   return data;
 }
-console.log(insert(a));
+// console.log(insert(a));
+
+
+//快排
+function quicksort(arr,s,e){
+  if(s<e){
+    let flag=arr[e];//以最后一个为标准
+    let i=s,j=e;
+    let temp=0;
+    while(i<j){
+      while(i<j&&arr[i]<flag){
+        i++;
+      }
+      while(i<j&&arr[j]>=flag){
+        j--
+      }
+      temp=arr[i];
+      arr[i]=arr[j];
+      arr[j]=temp;
+    }
+    arr[e]=arr[j];
+    arr[j]=flag;
+
+    quicksort(arr,s,j-1);
+    quicksort(arr,j+1,e);
+    // console.log(arr)
+  }
+}
+quicksort(a,0,a.length-1);
+console.log(a);
+
