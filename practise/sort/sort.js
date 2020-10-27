@@ -51,6 +51,33 @@ function  insert(data){
   return data;
 }
 // console.log(insert(a));
+//希尔排序，插入排序的升级版，按照下标设置步长后分组（奇偶组），每组内进行插入排序，分组数=len/步长+，步长=1时，返回
+function shell(arr){
+  var step=arr.length/3+1;
+  while(step>1){
+    for(let i=0;i<step;i++){
+      console.log(i)
+      for(let j=i;j<arr.length;j+=step){
+        for(let k=j;k>i;k-=step){
+          if(arr[k]<arr[k-step]){
+            // swap(a[k],a[k-step]);
+            let temp=a[k];
+            a[k]=a[k-step];
+            a[k-step]=a[k];
+          }else{
+            break;
+          }
+        }
+
+      }
+    }
+    step=step/3+1;
+  }
+  return arr;
+  console.log(arr)
+}
+shell(a)
+// console.log(shell(a));
 
 
 //快排
@@ -78,6 +105,6 @@ function quicksort(arr,s,e){
     // console.log(arr)
   }
 }
-quicksort(a,0,a.length-1);
+// quicksort(a,0,a.length-1);
 console.log(a);
 
