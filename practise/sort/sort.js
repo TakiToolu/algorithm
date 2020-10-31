@@ -108,3 +108,35 @@ function quicksort(arr,s,e){
 // quicksort(a,0,a.length-1);
 console.log(a);
 
+
+//堆排序
+//利用子节点是父节点索引的2倍+1和2倍+2
+function adjust(arr,index){
+  //调整某个节点的函数
+  let left=index*2+1;
+  let right=index*2+2;
+  let max=index;
+  if(left<arr.length&&arr[left]>arr[max]){
+    max=left;
+  }
+  if(right<arr.length&&arr[right]>arr[max]){
+    max=right;
+  }
+  if(max!=index){
+    swap(arr[max],arr[index]);
+    adjust(arr,max);
+  }
+}
+function heapsort(arr){
+  for(let i=arr.length/2-1;i>=0;i--){
+    adjust(arr,i);
+  }
+  //找到第k大的值，就要把堆顶与最后一个交换，相当于删除，然后哦重新对排序
+
+
+
+}
+
+
+
+
