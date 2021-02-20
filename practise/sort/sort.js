@@ -132,9 +132,6 @@ function heapsort(arr){
     adjust(arr,i);
   }
   //找到第k大的值，就要把堆顶与最后一个交换，相当于删除，然后哦重新对排序
-
-
-
 }
 
 

@@ -11,6 +11,7 @@ app.use(function (req,res,next) {
     res.setHeader('Access-Control-Expose-Headers','name1');//允许返回的头，解决添加cookie报错的方法，将cookie的那么暴露在外
     res.setHeader('Access-Control-Max-Age',6000);//预检的存活时间 每6秒 发一次试探请求
     if(req.methods =='OPTIONS'){
+
       res.end();//多余的OPTION请求（域检测）不做任何处理
     }
   }

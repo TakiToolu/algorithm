@@ -17,3 +17,13 @@ a.prototype=new b();
 let c=new a();
 //   console.log(instance_of(a,Object))
   console.log(instance_of(c,Object))
+
+function myinstanceof(L,R){
+    let obj=R.prototype;
+    while(1){
+      if(L===obj){return true}
+      if(L===null)return false;
+      L=L.__proto__;
+    }
+
+}

@@ -14,6 +14,10 @@ www.baidu..com
 viode.baidu.com
 a是通过http://a.zxx.com：3000、a.html访问，嵌入b页面
 单机测试前提：修改服务器hosts文件将IP对应到两个域名
+C:\Windows\System32\drivers\etc\hosts
+127.0.0.1 www.zxx.cn
+127.0.0.1 a.zxx.cn
+127.0.0.1 b.zxx.cn
 实现：将两个页面的 document.domain设置为同一个
 -->
 <iframe src="http://b.zxx.com:4000/b.html" id='frame' onload="load()"></iframe>

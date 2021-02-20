@@ -14,3 +14,8 @@ function _new(Func,...args){
 let a=new String();
 
 console.log(a);
+
+function mynew(Func,...args){
+  let obj=Object.create(Func.prototype);
+
+}
